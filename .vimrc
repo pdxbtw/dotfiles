@@ -1,4 +1,4 @@
-"  Ben Wilson's .vimrc file
+" Ben Wilson's .vimrc file
 " -----------------------------------------------------------------------------
 " Colors {{{
 colorscheme slate
@@ -52,9 +52,9 @@ set foldmethod=indent   " fold based on indent level (see :help foldmethod)
 "}}}
 " Custom Leader {{{
 " let mapleader = ","     " leader is comma
-inoremap jk <Esc>       " jk is Escape: Insert mode
-cnoremap jk <Esc>       " jk is Escape: Command line mode
-nnoremap <Space> :w<CR> " press the space bar to save
+inoremap jk <Esc>" jk is Escape: Insert mode
+cnoremap jk <Esc>" jk is Escape: Command line mode
+nnoremap <Space> :w<CR>" press the space bar to save
  
 
 "}}}
