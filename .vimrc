@@ -7,27 +7,28 @@ syntax enable           " enable syntax processing
 
 "}}}
 " Spaces and Tabs {{{
-set tabstop=4		   " number of visual spaces per TAB
-set softtabstop=4	   " number of spaces in tab when editing
-set expandtab		   " tabs are converted to spaces
-set modelines=1         " reads 1 modeline at the bottom of file
+set tabstop=8 " number of visual spaces per TAB
+set softtabstop=4 " number of spaces in tab when editing
+set shiftwidth=4
+set expandtab " tabs are converted to spaces
+set modelines=1 " reads 1 modeline at the bottom of file
 
 
 "}}}
 " UI Config {{{
-set number  		   " show line numbers
-set showcmd 		   " show command in bottom bar
-set cursorline		   " highlight current line
-filetype indent on	   " load filetype-specific indent files
-set wildmenu            " visual autocomplete for command menu
-set lazyredraw          " redraw only when necessary
-set showmatch           " highlight matching [{()}]
+set number " show line numbers
+set showcmd " show command in bottom bar
+set cursorline " highlight current line
+filetype indent on " load filetype-specific indent files
+set wildmenu " visual autocomplete for command menu
+set lazyredraw " redraw only when necessary
+set showmatch " highlight matching [{()}]
 
 
 "}}}
 " Searching {{{
-set incsearch           " search as characters are entered
-set hlsearch            " highlight matches
+set incsearch " search as characters are entered
+set hlsearch " highlight matches
 
 
 "}}}
@@ -84,5 +85,5 @@ nnoremap <Space> :w<CR>" press the space bar to save
 "}}}
 " -----------------------------------------------------------------------------
 
-
+autocmd FileType python setlocal commentstring=#\ %s
 " vim:foldmethod=marker:foldlevel=0
