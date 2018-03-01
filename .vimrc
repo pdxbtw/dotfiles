@@ -1,7 +1,13 @@
 " Ben Wilson's .vimrc file
-" -----------------------------------------------------------------------------
+"-----------------------------------------------------------------------------
+execute pathogen#infect()
+set sessionoptions-=options 
+
 " Colors {{{
-colorscheme slate
+"colorscheme slate
+colorscheme monokai
+"colorscheme badwolf
+"colorscheme goodwolf
 syntax enable           " enable syntax processing
 
 
@@ -16,19 +22,21 @@ set modelines=1 " reads 1 modeline at the bottom of file
 
 "}}}
 " UI Config {{{
-set number " show line numbers
-set showcmd " show command in bottom bar
-set cursorline " highlight current line
-filetype indent on " load filetype-specific indent files
-set wildmenu " visual autocomplete for command menu
-set lazyredraw " redraw only when necessary
-set showmatch " highlight matching [{()}]
+set number  		   " show line numbers
+set showcmd 		   " show command in bottom bar
+set cursorline		   " highlight current line
+filetype indent on	   " load filetype-specific indent files
+set wildmenu            " visual autocomplete for command menu
+set lazyredraw          " redraw only when necessary
+set showmatch           " highlight matching [{()}]
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
 
 
 "}}}
 " Searching {{{
-set incsearch " search as characters are entered
-set hlsearch " highlight matches
+set incsearch           " search as characters are entered
+set hlsearch            " highlight matches
 
 
 "}}}
@@ -80,10 +88,18 @@ nnoremap <Space> :w<CR>" press the space bar to save
 
 "}}}
 " Custom Functions {{{
+"   HTML
+let g:user_emmet_install_global = 0
+let g:user_emmet_leader_key ='<C-Z>'
+autocmd FileType html,css EmmetInstall
+"   Python
+autocmd FileType python setlocal commentstring=#\ %s
+"   MATLAB
+source $VIMRUNTIME/macros/matchit.vim
+autocmd BufEnter *.m compiler mlint
 
 
 "}}}
 " -----------------------------------------------------------------------------
 
-autocmd FileType python setlocal commentstring=#\ %s
 " vim:foldmethod=marker:foldlevel=0
